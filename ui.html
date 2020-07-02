@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&amp;display=swap" rel="stylesheet">
+  </head>
+  <style>
+    html,body {
+      text-align: center;
+      font-family: "Archivo";
+      background-color: #D2F0F8;
+      padding: 15px;
+    }
+    button {
+      background-color: #FF3D3D;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      font-family: "Archivo";
+      font-size: 15px;
+      margin: 5px;
+    }
+    .grey {
+      background-color: transparent;
+      border: 1px solid darkslategray;
+      color: darkslategray;
+    }
+  </style>
+  <h1>PICK A CARD</h1>
+  <button id="pick">PICK</button>
+  <button id="flip" class="grey">FLIP</button>
+  <script>
+  
+  document.getElementById('pick').onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'pick' } }, '*')
+  }
+  document.getElementById('flip').onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'flip' } }, '*')
+  }
+  </script>  
+</html>
